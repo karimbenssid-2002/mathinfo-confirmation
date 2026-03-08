@@ -1,0 +1,169 @@
+:root {
+    --primary: #059669;
+    --secondary: #10B981;
+    --cta: #F97316;
+    --cta-hover: #EA580C;
+    --bg: #ECFDF5;
+    --text: #064E3B;
+    --card-bg: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Neue', cursive;
+    background-color: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow: hidden;
+    background-image: radial-gradient(circle at center, #ffffff 0%, #ECFDF5 100%);
+}
+
+.success-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    z-index: 10;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 24px;
+    padding: 40px 30px;
+    box-shadow: 0 20px 25px -5px rgba(5, 150, 105, 0.1), 0 8px 10px -6px rgba(5, 150, 105, 0.1);
+    text-align: center;
+    position: relative;
+    border: 4px solid var(--primary);
+    transform: translateY(0);
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.icon-container {
+    width: 96px;
+    height: 96px;
+    background-color: var(--secondary);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 24px;
+    color: white;
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+    70% { box-shadow: 0 0 0 20px rgba(16, 185, 129, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.title {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.subtitle {
+    font-family: 'Comic Neue', cursive;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 24px;
+}
+
+.wish {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--cta);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Confetti Styles pour l'animation */
+.confetti-container {
+    position: absolute;
+    top: -50vh;
+    left: 0;
+    width: 100%;
+    height: 150vh;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #f00;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .title {
+        font-size: 1.8rem;
+    }
+    .subtitle {
+        font-size: 1.2rem;
+    }
+    .wish {
+        font-size: 1.4rem;
+    }
+    .card {
+        padding: 35px 25px;
+        margin: 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+    .subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+    }
+    .wish {
+        font-size: 1.2rem;
+    }
+    .icon-container {
+        width: 72px;
+        height: 72px;
+        margin-bottom: 20px;
+    }
+    .icon-container svg {
+        width: 40px;
+        height: 40px;
+    }
+    .card {
+        padding: 25px 15px;
+        border-width: 3px;
+    }
+}
