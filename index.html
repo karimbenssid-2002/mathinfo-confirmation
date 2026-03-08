@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathInfo - Inscription Réussie</title>
+    <meta name="description" content="Confirmation d'inscription à l'application MathInfo.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Comic+Neue:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="success-container">
+        <div class="confetti-container" id="confetti-container"></div>
+        <div class="card">
+            <div class="icon-container">
+                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="success-icon">
+                    <path d="M22 11.08V12a10 10 10 0 1 1-5.93-9.14"></path>
+                    <path d="m9 11 3 3L22 4"></path>
+                </svg>
+            </div>
+            
+            <h1 class="title">Félicitation vous êtes maintenant inscrit sur l'application MathInfo</h1>
+            
+            <p class="subtitle">Vous pouvez maintenant répondre aux énigmes</p>
+            
+            <p class="wish">Bonne chance ! 🍀</p>
+            
+        </div>
+    </div>
+    
+    <script>
+        // Effet de confettis
+        const container = document.getElementById('confetti-container');
+        const colors = ['#059669', '#10B981', '#F97316', '#FBBF24', '#3B82F6', '#EC4899'];
+        
+        for (let i = 0; i < 75; i++) {
+            const confetti = document.createElement('div');
+            confetti.classList.add('confetti');
+            
+            // Random properties
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            confetti.style.animationDelay = Math.random() * 5 + 's';
+            confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            
+            // Random shapes (square or circle)
+            if (Math.random() > 0.5) {
+                confetti.style.borderRadius = '50%';
+            }
+            
+            // Random size
+            const size = Math.random() * 8 + 6;
+            confetti.style.width = size + 'px';
+            confetti.style.height = size + 'px';
+            
+            container.appendChild(confetti);
+        }
+    </script>
+</body>
+</html>
